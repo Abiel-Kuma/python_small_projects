@@ -1,6 +1,7 @@
 from pyttsx3 import init
+book = open(r"book.txt")
+book_text = book.readlines()
 engine = init()
-engine.getProperty('volume')
-engine.setProperty('volume', -0.50)
-engine.say("hello world")
-engine.runAndWait()
+for i in book_text:
+    engine.say(i)
+    engine.runAndWait()
